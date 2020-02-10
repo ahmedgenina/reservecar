@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Listar Veículos
+ {% endblock title %}
+ {% block content %}
+ <h2><center><body>Lista de Veículos</body></center></h2>
+<div class="row">
+ {% for veiculo in lista %}
+   <div class="col-md-4">
+     <div class="thumbnail">
+         <img src="{{veiculo.foto_veiculo.url}}" style="width:100%">
+         <div class="caption">
+           <p><b>Modelo:</b> {{veiculo.modelo}}</p>
+           <p><b>Placa:</b> {{veiculo.placa}}</p>
+           <p><b>Estado:</b>
+           {% if veiculo.estado == "disponível" %}
+             {{veiculo.estado}}
+           {% else %}
+             {{veiculo.estado}}
+           {% endif %}
+           </p>
+         </div>
+     </div>
+   </div>
+ {% endfor %}
+ </div>
+ {% endblock content %}

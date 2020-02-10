@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Cadastrar Motorista
+ {% endblock title %}
+ {% block content %}
+ <h2><center><body>Cadastro de Motorista</body></center></h2>
+<form action="{% url 'cadastrar_motorista' %}" class="form-signin" method = "post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Nome</label>
+    {{ form.nome }}
+    <label>CPF</label>
+    {{ form.cpf }}
+    <label>Telefone</label>
+    {{ form.telefone }}
+    <label>Sexo</label>
+    {{ form.sexo }}
+    <button class="btn btn-lg btn-primary btn-black" type="submit">Cadastrar</button>
+</form>
+ {% endblock content %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Listar Veículos
+ {% endblock title %}
+ {% block content %}
+ <h2><center><body>Lista de Motoristas</body></center></h2>
+<form method="get">
+    <div class="col-lg-10">
+    <div class="input-group">
+      <input type="text" class="form-control" name="busca" placeholder="Digite o nome do motorista">
+      <span class="input-group-btn">
+        <button class="btn_default btn-default" type="submit">Pesquisar</button>
+      </span>
+    </div>
+    </div>
+</form>
+<br></br><br></br>
+<table id="customers">
+  <tr>
+    <th>Nome</th>
+    <th>CPF</th>
+    <th>Telefone</th>
+    <th>Sexo</th>
+  </tr>
+  {% for motorista in lista %}
+      <tr>
+        <td>{{motorista.nome}}</td>
+        <td>{{motorista.cpf}}</td>
+        <td>{{motorista.telefone}}</td>
+        <td>{{motorista.sexo}}</td>
+      </tr>
+  {% endfor %}
+</table>
+ {% endblock content %}

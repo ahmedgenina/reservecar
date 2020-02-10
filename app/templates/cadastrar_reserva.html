@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Cadastrar Motorista
+ {% endblock title %}
+ {% block content %}
+ <h1><center><body>Agendar Reserva</body></center></h1>
+<form action="{% url 'cadastrar_reserva' %}" class="form-signin" method = "post">
+    {% csrf_token %}
+
+    <label>Data inicial: </label>{{ form.data_inicio }} <label>Data final: </label> {{ form.data_final }}
+
+<br><br>
+
+    <label>Veículo</label>
+    {{ form.veiculo }}<br>
+    <label>Motorista</label>
+    {{ form.motorista }}<br>
+    <button class="btn btn-lg btn-primary btn-black" type="submit">Cadastrar</button>
+</form>
+ {% endblock content %}

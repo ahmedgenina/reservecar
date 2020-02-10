@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Erro
+ {% endblock title %}
+ {% block content %}
+    <h1><center><body>O veículo já está reservado para esta data ou o mesmo está em manutenção.</body></center></h1>
+    <div class="centro">
+        <a href="{% url 'cadastrar_reserva' %}"> <button class="btn" ><i class="icon ion-plus-circled"></i> NOVA RESERVA</button></a>
+    </div>
+ {% endblock content %}

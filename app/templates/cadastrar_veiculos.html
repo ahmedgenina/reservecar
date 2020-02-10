@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Cadastrar Veículos
+ {% endblock title %}
+ {% block content %}
+ <h2><center><body>Cadastro de Veículos</body></center></h2>
+<form action="{% url 'cadastrar_veiculos' %}" class="form-signin" method = "post" enctype="multipart/form-data">
+     {% csrf_token %}
+    <label>Modelo</label>
+    {{ form.modelo }}
+    <label>Placa</label>
+    {{ form.placa }}
+    <label>Ano</label>
+    {{ form.ano }}
+    <label>Estado</label>
+    {{ form.estado }}
+     <label>Foto do veículo</label>
+    {{ form.foto_veiculo }}
+    <button class="btn btn-lg btn-primary btn-black" type="submit">Cadastrar</button>
+</form>
+ {% endblock content %}

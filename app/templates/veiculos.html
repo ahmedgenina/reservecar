@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Listagem de Veículos
+ {% endblock title %}
+ {% block content %}
+    <h2><center><body>Veículos</body></center></h2>
+    <div class="centro">
+        <a href="{% url 'cadastrar_veiculos' %}"> <button class="btn" ><i class="icon ion-plus-circled"></i> CADASTRAR VEÍCULOS</button></a>
+        <a href="{% url 'listar_veiculos' %}"> <button class="btn" ></i>☰ LISTAR VEÍCULOS</button></a>
+    </div>
+ {% endblock content %}

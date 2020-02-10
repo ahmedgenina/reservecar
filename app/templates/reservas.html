@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+ {% load static %}
+ {% block title %}
+ Reservas
+ {% endblock title %}
+ {% block content %}
+    <h2><center><body>Reservas</body></center></h2>
+    <div class="centro">
+        <a href="{% url 'cadastrar_reserva' %}"> <button class="btn" ><i class="icon ion-plus-circled"></i> NOVA RESERVA</button></a>
+        <a href="{% url 'listar_reservas' %}"> <button class="btn" ></i>☰ LISTAR RESERVAS</button></a>
+    </div>
+ {% endblock content %}
